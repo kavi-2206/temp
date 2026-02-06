@@ -276,8 +276,11 @@
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ff6f91 100%);
             z-index: 1000;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             animation: fadeIn 1s ease-in-out;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px 0;
         }
 
         @keyframes fadeIn {
@@ -290,6 +293,11 @@
             padding: 30px;
             max-width: 500px;
             animation: scaleIn 0.5s ease-out;
+            margin: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         @keyframes scaleIn {
@@ -310,18 +318,6 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             animation: heartbeat 1.5s ease-in-out infinite;
             font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-        }
-
-        .cat-kiss-sticker {
-            width: 150px;
-            height: 150px;
-            margin: 20px auto;
-            animation: kissFloat 2s ease-in-out infinite;
-        }
-
-        @keyframes kissFloat {
-            0%, 100% { transform: scale(1) rotate(-5deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
         }
 
         .special-message {
@@ -415,29 +411,28 @@
 
     <div class="container">
         <div class="card">
-            <h1 class="title">💖 For My Kajuuuuu 💖</h1>
+            <h1 class="title">💗 For My Kajuuuuu 💗</h1>
             <img src="panda-valentine.png" alt="Panda" class="panda-sticker">
-            <p class="question">Will you be my Valentine? 🌹</p>
+            <p class="question">Will you be my Valentine? ♥️😁</p>
             <p class="subtitle" id="subtitle">Please don't say no... or you can try saying, let's see 😏💕</p>
             <div class="buttons">
-                <button class="btn btn-yes" onclick="sayYes(event)">Yes! 💕</button>
-                <button class="btn btn-no" id="noBtn" onmouseover="moveButton(event)" ontouchstart="moveButton(event)" onclick="moveButton(event)">No</button>
+                <button class="btn btn-yes" onclick="sayYes(event)">Yesss! 🌸</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveButton(event)" ontouchstart="moveButton(event)" onclick="moveButton(event)">Naah ☠️</button>
             </div>
         </div>
     </div>
 
     <div class="success-message" id="successMessage">
         <div class="success-content">
-            <h1>I knew it! 💖</h1>
-            <img src="cat-kiss.png" alt="Cat Kiss" class="cat-kiss-sticker">
             <p class="special-message">I love you so muchhhh Kajudaaaa! 😘💕</p>
-            <div class="love-emoji">💝</div>
-            <p>Kajuuuuu, we've been together for over 2 years now, and every single day my love for you grows deeper and stronger.</p>
-            <p>You are my everything - my best friend, my partner, my soulmate.</p>
+            <p>Boiii yrrr you are the best 💯❤️✨🌟... And thanks a lot for being there ♾️...</p>
+            <p>You are my everything yrr boiiii.... I like everything that is associated with Miss Kajaliyaaa 😁... Her smile... Her cute face... Her anger... Each and every mood of her...
+Aur agar kuch bhi bekar mood ho toh like converting it to the good one bilkul jaldi se... Asap bole toh... 
+</p>
             <img src="love-hug.png" alt="Love" class="love-sticker">
-            <p>Thank you for being there through every moment, every laugh, every challenge.</p>
-            <p>Thank you for being YOU. 🌟</p>
-            <p style="font-size: 1.5em; margin-top: 30px;">I love you more than words can say! 💕✨</p>
+            <p>Chalo boiii aise hi baitha tha toh ye krne lag gya... But everything is true haan... I don't lie wrt loving you ever ♥️😘</p>
+            <p>Thank you for being YOU. My Super 🌟</p>
+            <p style="font-size: 1.5em; margin-top: 30px;">Love you 3000 mera puchku don 😁💕✨</p>
         </div>
     </div>
 
