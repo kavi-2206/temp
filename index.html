@@ -415,13 +415,13 @@
 
     <div class="container">
         <div class="card">
-            <h1 class="title">💖 For My Boiii 💖</h1>
-            <img src="https://media.tenor.com/aYKSna-0o-0AAAAi/milk-and-mocha-bear-kiss.gif" alt="Panda" class="panda-sticker">
-            <p class="question">Will you be my Valentine? ❤️😁</p>
+            <h1 class="title">💖 For My Kajuuuuu 💖</h1>
+            <img src="panda-valentine.png" alt="Panda" class="panda-sticker">
+            <p class="question">Will you be my Valentine? 🌹</p>
             <p class="subtitle" id="subtitle">Please don't say no... or you can try saying, let's see 😏💕</p>
             <div class="buttons">
-                <button class="btn btn-yes" onclick="sayYes(event)">Yesss! 💕</button>
-                <button class="btn btn-no" id="noBtn" onmouseover="moveButton(event)" ontouchstart="moveButton(event)" onclick="moveButton(event)">Naah ☠️</button>
+                <button class="btn btn-yes" onclick="sayYes(event)">Yes! 💕</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveButton(event)" ontouchstart="moveButton(event)" onclick="moveButton(event)">No</button>
             </div>
         </div>
     </div>
@@ -429,17 +429,15 @@
     <div class="success-message" id="successMessage">
         <div class="success-content">
             <h1>I knew it! 💖</h1>
-            <img src="https://media.tenor.com/CsOxeaHJloMAAAAi/cat-kiss.gif" alt="Cat Kiss" class="cat-kiss-sticker">
-            <p class="special-message">I love you so muchhhh Kajudaaaa! 😘♥️</p>
+            <img src="cat-kiss.png" alt="Cat Kiss" class="cat-kiss-sticker">
+            <p class="special-message">I love you so muchhhh Kajudaaaa! 😘💕</p>
             <div class="love-emoji">💝</div>
-            <p>Boiii yrrr you are the best ♥️... And thanks a lot for being there ♥️...</p>
-            <p>I like everything that is associated with Miss Kajaliyaaa 😁... Her smile... Her cute face... Her anger... Each and every mood of her...
-Aur agar kuch bhi bekar mood ho toh like converting it to the good one bilkul jaldi se... Asap bole toh...
-</p>
-            <p>Chalo boiii aise hi baitha tha toh ye krne lag gya... But everything is true haan... I don't lie wrt loving you ever ♥️😘/p>
-            <p>Love you 3000 my star ♥️🌟</p>
-            <img src="https://media.tenor.com/VQROueuDlFkAAAAi/milk-and-mocha-hug.gif" alt="Love" class="love-sticker">
-            
+            <p>Kajuuuuu, we've been together for over 2 years now, and every single day my love for you grows deeper and stronger.</p>
+            <p>You are my everything - my best friend, my partner, my soulmate.</p>
+            <img src="love-hug.png" alt="Love" class="love-sticker">
+            <p>Thank you for being there through every moment, every laugh, every challenge.</p>
+            <p>Thank you for being YOU. 🌟</p>
+            <p style="font-size: 1.5em; margin-top: 30px;">I love you more than words can say! 💕✨</p>
         </div>
     </div>
 
@@ -500,7 +498,7 @@ Aur agar kuch bhi bekar mood ho toh like converting it to the good one bilkul ja
             }
             
             const btn = document.getElementById('noBtn');
-            const card = document.querySelector('.card');
+            const buttonsContainer = document.querySelector('.buttons');
             const subtitle = document.getElementById('subtitle');
             
             // Update message
@@ -516,18 +514,18 @@ Aur agar kuch bhi bekar mood ho toh like converting it to the good one bilkul ja
             // Make button absolutely positioned
             btn.style.position = 'absolute';
             
-            // Get dimensions
-            const cardWidth = card.offsetWidth;
-            const cardHeight = card.offsetHeight;
+            // Get dimensions of the buttons container (not the whole card)
+            const containerWidth = buttonsContainer.offsetWidth;
+            const containerHeight = buttonsContainer.offsetHeight;
             const btnWidth = btn.offsetWidth;
             const btnHeight = btn.offsetHeight;
             
-            // Define safe zone - AVOID the top 80px where Yes button is
-            const padding = 25;
+            // Define safe zone within the buttons container
+            const padding = 10;
             const minX = padding;
-            const minY = 85; // Start well below Yes button (which is at top: 10px + its height)
-            const maxX = cardWidth - btnWidth - padding;
-            const maxY = cardHeight - btnHeight - padding;
+            const minY = 75; // Start well below Yes button 
+            const maxX = containerWidth - btnWidth - padding;
+            const maxY = containerHeight - btnHeight - padding;
             
             // Generate random position in safe zone
             const randomX = Math.random() * (maxX - minX) + minX;
