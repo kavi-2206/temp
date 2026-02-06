@@ -12,9 +12,10 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            overflow-x: hidden;
-            min-height: 100vh;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
             background-size: 400% 400%;
             animation: gradientShift 15s ease infinite;
@@ -104,12 +105,14 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 30px;
-            padding: 40px 30px;
+            padding: 30px 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
             animation: cardFloat 3s ease-in-out infinite;
-            min-height: 450px;
+            height: 520px;
+            display: flex;
+            flex-direction: column;
         }
 
         @keyframes cardFloat {
@@ -135,13 +138,28 @@
         }
 
         .title {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #ff1744;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             animation: pulse 2s ease-in-out infinite;
             position: relative;
             z-index: 1;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+        }
+
+        .panda-sticker {
+            width: 120px;
+            height: 120px;
+            margin: 10px auto;
+            animation: bounce 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
         }
 
         @keyframes pulse {
@@ -150,44 +168,43 @@
         }
 
         .question {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: #333;
-            margin: 30px 0;
+            margin: 15px 0;
             font-weight: bold;
             position: relative;
             z-index: 1;
             line-height: 1.4;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
         }
 
         .subtitle {
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-style: italic;
             position: relative;
             z-index: 1;
+            font-family: 'Georgia', serif;
         }
 
         .buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 30px;
             position: relative;
             z-index: 1;
-            flex-wrap: wrap;
+            margin-top: 20px;
+            height: 220px;
+            flex: 1;
         }
 
         .btn {
-            padding: 15px 40px;
-            font-size: 1.2em;
+            padding: 12px 30px;
+            font-size: 1em;
             border: none;
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
             overflow: hidden;
         }
 
@@ -213,6 +230,12 @@
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             animation: btnGlow 2s ease-in-out infinite;
+            position: absolute;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            z-index: 10;
+            pointer-events: all;
         }
 
         @keyframes btnGlow {
@@ -233,6 +256,9 @@
             color: #333;
             position: absolute;
             transition: all 0.3s ease;
+            left: 50%;
+            top: 70px;
+            transform: translateX(-50%);
         }
 
         .btn-no:hover {
@@ -278,11 +304,45 @@
         }
 
         .success-content h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: white;
             margin-bottom: 20px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             animation: heartbeat 1.5s ease-in-out infinite;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+        }
+
+        .cat-kiss-sticker {
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            animation: kissFloat 2s ease-in-out infinite;
+        }
+
+        @keyframes kissFloat {
+            0%, 100% { transform: scale(1) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .special-message {
+            font-size: 1.8em;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+        }
+
+        .love-sticker {
+            width: 120px;
+            height: 120px;
+            margin: 15px auto;
+            animation: floatSoft 3s ease-in-out infinite;
+        }
+
+        @keyframes floatSoft {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         @keyframes heartbeat {
@@ -292,11 +352,12 @@
         }
 
         .success-content p {
-            font-size: 1.3em;
+            font-size: 1.2em;
             color: white;
             line-height: 1.8;
             text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
             margin-bottom: 15px;
+            font-family: 'Georgia', serif;
         }
 
         .love-emoji {
@@ -354,12 +415,13 @@
 
     <div class="container">
         <div class="card">
-            <h1 class="title">💖 For My Kajuuuuu 💖</h1>
-            <p class="question">Will you be my Valentine? 🌹</p>
-            <p class="subtitle">Try saying no 😂😂😂</p>
+            <h1 class="title">💖 For My Boiii 💖</h1>
+            <img src="https://media.tenor.com/aYKSna-0o-0AAAAi/milk-and-mocha-bear-kiss.gif" alt="Panda" class="panda-sticker">
+            <p class="question">Will you be my Valentine? ❤️😁</p>
+            <p class="subtitle" id="subtitle">Please don't say no... or you can try saying, let's see 😏💕</p>
             <div class="buttons">
-                <button class="btn btn-yes" onclick="sayYes()">Yes! 💕</button>
-                <button class="btn btn-no" id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">No</button>
+                <button class="btn btn-yes" onclick="sayYes(event)">Yesss! 💕</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveButton(event)" ontouchstart="moveButton(event)" onclick="moveButton(event)">Naah ☠️</button>
             </div>
         </div>
     </div>
@@ -367,12 +429,16 @@
     <div class="success-message" id="successMessage">
         <div class="success-content">
             <h1>I knew it! 💖</h1>
+            <img src="https://media.tenor.com/CsOxeaHJloMAAAAi/cat-kiss.gif" alt="Cat Kiss" class="cat-kiss-sticker">
+            <p class="special-message">I love you so muchhhh Kajudaaaa! 😘♥️</p>
             <div class="love-emoji">💝</div>
-            <p>Kajuuuuu, we've been together for over 2 years now, and every single day my love for you grows deeper and stronger.</p>
-            <p>You are my everything - my best friend, my partner, my soulmate.</p>
-            <p>Thank you for being there through every moment, every laugh, every challenge.</p>
-            <p>Thank you for being YOU. 🌟</p>
-            <p style="font-size: 1.5em; margin-top: 30px;">I love you more than words can say! 💕✨</p>
+            <p>Boiii yrrr you are the best ♥️... And thanks a lot for being there ♥️...</p>
+            <p>I like everything that is associated with Miss Kajaliyaaa 😁... Her smile... Her cute face... Her anger... Each and every mood of her...
+Aur agar kuch bhi bekar mood ho toh like converting it to the good one bilkul jaldi se... Asap bole toh...
+</p>
+            <img src="https://media.tenor.com/VQROueuDlFkAAAAi/milk-and-mocha-hug.gif" alt="Love" class="love-sticker">
+            <p>Chalo boiii aise hi baitha tha toh ye krne lag gya... But everything is true haan... I don't lie wrt loving you ever ♥️😘/p>
+            <p>Love you 3000 my star ♥️🌟</p>
         </div>
     </div>
 
@@ -417,36 +483,66 @@
             setTimeout(() => sparkle.remove(), 1500);
         }
 
-        // Move No button
-        function moveButton() {
+        // Move No button with messages
+        let messageIndex = 0;
+        const messages = [
+            "Soch lo na please kaju boiiiii 🥺💖",
+            "Ek baar aur socho boiiii 😢💕",
+            "Maan jao yr boiiiiii... Pilijjjj 🙏✨",
+            "Pilijjjjj I love you yr boiiiiii 💔😭"
+        ];
+
+        function moveButton(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
             const btn = document.getElementById('noBtn');
             const card = document.querySelector('.card');
+            const subtitle = document.getElementById('subtitle');
             
-            // Make card position relative if not already
-            card.style.position = 'relative';
+            // Update message
+            subtitle.textContent = messages[messageIndex];
+            subtitle.style.animation = 'none';
+            setTimeout(() => {
+                subtitle.style.animation = 'pulse 0.5s ease-in-out';
+            }, 10);
             
-            // Get card dimensions
+            // Cycle through messages
+            messageIndex = (messageIndex + 1) % messages.length;
+            
+            // Make button absolutely positioned
+            btn.style.position = 'absolute';
+            
+            // Get dimensions
             const cardWidth = card.offsetWidth;
             const cardHeight = card.offsetHeight;
             const btnWidth = btn.offsetWidth;
             const btnHeight = btn.offsetHeight;
             
-            // Calculate safe boundaries (with padding from edges)
-            const padding = 20;
+            // Define safe zone - AVOID the top 80px where Yes button is
+            const padding = 25;
+            const minX = padding;
+            const minY = 85; // Start well below Yes button (which is at top: 10px + its height)
             const maxX = cardWidth - btnWidth - padding;
             const maxY = cardHeight - btnHeight - padding;
             
-            // Generate random position within safe boundaries
-            const randomX = Math.random() * (maxX - padding) + padding;
-            const randomY = Math.random() * (maxY - padding) + padding;
+            // Generate random position in safe zone
+            const randomX = Math.random() * (maxX - minX) + minX;
+            const randomY = Math.random() * (maxY - minY) + minY;
             
-            btn.style.position = 'absolute';
             btn.style.left = randomX + 'px';
             btn.style.top = randomY + 'px';
         }
 
         // Say Yes function
-        function sayYes() {
+        function sayYes(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
             createConfetti();
             document.getElementById('successMessage').style.display = 'flex';
             
